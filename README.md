@@ -2,7 +2,7 @@
 Deploys portable applications from web server to WIN CE
 
 Instructions:
-- Archieve app folder using .ZIP
+- Archive app folder using .ZIP
 - Create a direct http download link to the .ZIP
 - You must fill "AppDirectory"\Configs.txt file for this app to work, fill them as follows:
 
