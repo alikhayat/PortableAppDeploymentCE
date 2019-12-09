@@ -1,5 +1,5 @@
 Dc Deploy application needed steps :
-- Archieve app folder using .ZIP.
+- Archive app folder using .ZIP.
 - Create a direct http download link to the .ZIP.
 - you must fill "AppDirectory"\Configs.txt file for this app to work, fill them as follows:
 
