@@ -1,4 +1,5 @@
 Application\Dc
-http://10.1.100.24/dcapp/debug.zip
+http://10.3.1.24/dcapp/
 Application\
-debug.zip
+Prod.zip
+NBT-DC.zip

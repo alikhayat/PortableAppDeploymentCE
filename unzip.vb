@@ -13,13 +13,11 @@ Class Unzip
                 For Each e In zip1
                     e.Extract(TargetDir, ExtractExistingFileAction.OverwriteSilently)
                 Next
-                complete = True
             End Using
         Catch ex As Exception
+            System.IO.File.Delete(ZipToUnpack)
         Finally
-            If complete = True Then
-                System.IO.File.Delete(ZipToUnpack)
-            End If
+            
         End Try
     End Sub
 End Class

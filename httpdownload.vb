@@ -31,7 +31,7 @@ Class HttpDownload
     End Function
 
     'GetExistingFileLength
-    Public Shared Sub Download(ByVal url As String, ByVal existingFilename As String, ByVal quiet As Boolean)
+    Public Shared Function Download(ByVal url As String, ByVal existingFilename As String, ByVal quiet As Boolean) As Boolean
         Dim webRequest As HttpWebRequest
         Dim webResponse As HttpWebResponse
 
@@ -43,7 +43,7 @@ Class HttpDownload
                 fname = url
             End If
 
-            webRequest = CType(webRequest.Create(url), HttpWebRequest)
+            webRequest = CType(Net.WebRequest.Create(url), HttpWebRequest)
             Dim preloadedLength As Long = HttpDownload.GetExistingFileLength(fname)
             If (preloadedLength > 0) Then
                 webRequest.AddRange(CType(preloadedLength, Integer))
@@ -85,13 +85,16 @@ Class HttpDownload
 
             'loop
             Console.WriteLine("{0}: complete!", url)
+            Return True
         Catch e As Exception
             Console.WriteLine("{0}: {1} '{2}'", url, e.GetType.FullName, e.Message)
+            Return False
         Finally
             If (Not (fs) Is Nothing) Then
                 fs.Flush()
                 fs.Close()
             End If
+
         End Try
-    End Sub
+    End Function
 End Class

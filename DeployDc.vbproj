@@ -7,9 +7,9 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{602F0723-A060-4218-94FE-AF7F99B41B8D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>DeployDc.Module1</StartupObject>
-    <RootNamespace>DeployDc</RootNamespace>
-    <AssemblyName>DeployDc</AssemblyName>
+    <StartupObject>UpdateDc.Module1</StartupObject>
+    <RootNamespace>UpdateDc</RootNamespace>
+    <AssemblyName>UpdateDc</AssemblyName>
     <ProjectTypeGuids>{68B1623D-7FB9-47D8-8664-7ECEA3297D4F};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <PlatformFamilyName>WindowsCE</PlatformFamilyName>
     <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
@@ -24,6 +24,7 @@
     <NativePlatformName>Windows CE</NativePlatformName>
     <FormFactorID>
     </FormFactorID>
+    <ApplicationIcon>images_ENy_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,7 +33,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>$(PlatformFamilyName)=TRUE</DefineConstants>
-    <DocumentationFile>DeployDc.xml</DocumentationFile>
+    <DocumentationFile>UpdateDc.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <FileAlignment>512</FileAlignment>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -46,7 +47,7 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>$(PlatformFamilyName)=TRUE</DefineConstants>
-    <DocumentationFile>DeployDc.xml</DocumentationFile>
+    <DocumentationFile>UpdateDc.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <FileAlignment>512</FileAlignment>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -58,6 +59,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Ionic.Zip.CF.dll</HintPath>
     </Reference>
+    <Reference Include="OpenNETCF, Version=2.3.12004.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Dc app must have\opennetcf\OpenNETCF.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenNETCF.WindowsCE, Version=2.3.12004.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Dc app must have\opennetcf\OpenNETCF.WindowsCE.dll</HintPath>
+    </Reference>
+    <Reference Include="Symbol.Fusion, Version=2.9.0.0, Culture=neutral, PublicKeyToken=68ec8db391f150ca, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,12 +89,14 @@
   <ItemGroup>
     <Compile Include="httpdownload.vb" />
     <Compile Include="Module1.vb" />
+    <Compile Include="MoveDir.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="PowerManagement.vb" />
     <Compile Include="unzip.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -98,9 +110,15 @@
     <Content Include="Configs.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images_ENy_icon.ico" />
     <Content Include="Readme.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shortcut.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.VisualBasic.targets" />
   <ProjectExtensions>
