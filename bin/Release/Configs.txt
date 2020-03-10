@@ -1,0 +1,4 @@
+Application\Dc
+http://10.1.100.24/dcapp/debug.zip
+Application\
+debug.zip

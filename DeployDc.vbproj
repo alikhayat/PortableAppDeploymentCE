@@ -116,6 +116,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Preload.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Shortcut.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

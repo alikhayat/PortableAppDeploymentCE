@@ -6,18 +6,18 @@ Module Module1
             EnableWifi()
             InializeTimer()
             ReadConfigs()
+            Process.Start(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\Preload.bat", "")
             If HttpDownload.Download(URL + FileNameDB, TempPath + FileNameDB, False) And HttpDownload.Download(URL + FileNameApp, TempPath + FileNameApp, False) Then
                 Unzip.Unzip(TempPath + FileNameDB, TempPath)
                 Unzip.Unzip(TempPath + FileNameApp, AppPath)
                 Unzip.Unzip(TempPath + FileNameApp, "\Program Files\Dc")
-
-                Process.Start(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\Shortcut.bat", "")
             Else
                 Console.WriteLine("Deploy Failed, Check network and restart")
             End If
 
         Catch ex As Exception
         Finally
+            Process.Start(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\Shortcut.bat", "")
         End Try
         
     End Sub

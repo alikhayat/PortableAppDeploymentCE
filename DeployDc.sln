@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DeployDc", "DeployDc.vbproj", "{602F0723-A060-4218-94FE-AF7F99B41B8D}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Dc", "..\..\..\GitHub\MobileInventoryCE\Dc.vbproj", "{BA52DAF0-9410-40BA-9DB0-5A89431F641D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +15,6 @@ Global
 		{602F0723-A060-4218-94FE-AF7F99B41B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{602F0723-A060-4218-94FE-AF7F99B41B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{602F0723-A060-4218-94FE-AF7F99B41B8D}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{BA52DAF0-9410-40BA-9DB0-5A89431F641D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA52DAF0-9410-40BA-9DB0-5A89431F641D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA52DAF0-9410-40BA-9DB0-5A89431F641D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{BA52DAF0-9410-40BA-9DB0-5A89431F641D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA52DAF0-9410-40BA-9DB0-5A89431F641D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA52DAF0-9410-40BA-9DB0-5A89431F641D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
